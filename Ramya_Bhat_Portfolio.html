@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramya Bhat - Portfolio</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #ffffff, #eef7ff);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            padding-top: 20px;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .main-wrapper {
+            width: 90%;
+            max-width: 900px;
+            background: #fff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            overflow: hidden;
+            animation: fadeInPage 1.5s ease-in-out;
+            transform: scale(1);
+        }
+
+        @keyframes fadeInPage {
+            from {
+                opacity: 0;
+                transform: translateY(-10%) scale(1.1);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, #50b3a2, #30a3d8);
+            color: #fff;
+            padding: 2.5rem 1rem;
+            text-align: center;
+            position: relative;
+            animation: headerFadeIn 2s ease-in-out;
+        }
+
+        @keyframes headerFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 20px;
+            background: radial-gradient(circle, #ffffff, transparent);
+        }
+
+        .header .profile {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            animation: profileFadeIn 2s ease-in-out;
+        }
+
+        @keyframes profileFadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .header .profile-img {
+            border-radius: 50%;
+            width: 140px;
+            height: 140px;
+            border: 4px solid #fff;
+            margin-bottom: 15px;
+            transition: transform 0.5s, box-shadow 0.5s;
+        }
+
+        .header .profile-img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+        }
+
+        .header .info h1 {
+            margin: 0;
+            font-size: 2.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .header .info h1:hover {
+            color: #ffeb3b;
+        }
+
+        .header .info .subtitle {
+            font-size: 1.3rem;
+            margin-top: 8px;
+            font-style: italic;
+            letter-spacing: 1px;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 20px;
+            animation: contentSlideIn 1.5s ease-in-out;
+        }
+
+        @keyframes contentSlideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-30%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .section {
+            margin-bottom: 40px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .section:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .section h2 {
+            border-bottom: 3px solid #50b3a2;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            color: #30a3d8;
+            letter-spacing: 1px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background: #e0f7fa;
+            margin-bottom: 10px;
+            padding: 12px;
+            border-left: 5px solid #30a3d8;
+            transition: all 0.3s ease-in-out;
+        }
+
+        li:hover {
+            background: #30a3d8;
+            color: #fff;
+            border-color: #ffeb3b;
+            transform: scale(1.05);
+        }
+
+        a {
+            color: #30a3d8;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .contact a {
+            background: linear-gradient(to right, #e0f7fa, #ffffff);
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        .contact a:hover {
+            color: #fff;
+            background: #30a3d8;
+            text-decoration: none;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 20px 0;
+            background: linear-gradient(135deg, #30a3d8, #50b3a2);
+            color: #fff;
+            position: relative;
+            animation: footerFadeIn 2s ease-in-out;
+        }
+
+        @keyframes footerFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 20px;
+            background: radial-gradient(circle, transparent, #ffffff);
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .footer p a {
+            color: #ffeb3b;
+            text-decoration: underline;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .footer p a:hover {
+            color: #fff;
+        }
+
+        /* Contact Icons */
+        .contact-icons {
+            margin-top: 15px;
+        }
+
+        .contact-icons a {
+            margin: 0 10px;
+            font-size: 1.6rem;
+            color: #fff;
+            transition: color 0.3s;
+        }
+
+        .contact-icons a:hover {
+            color: #ffeb3b;
+        }
+
+        .contact-text {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            color: #fff;
+            transition: color 0.3s;
+        }
+
+        .contact-text:hover {
+            color: #ffeb3b;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-wrapper">
+        <header class="header">
+            <div class="profile">
+                <img src="profile.jpeg" alt="Ramya Bhat" class="profile-img">
+                <div class="info">
+                    <h1>Ramya Bhat</h1>
+                    <p class="subtitle">BCA Student | Tech Enthusiast</p>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="section about">
+                <h2>About Me</h2>
+                <p>Hello! I'm Ramya Bhat, a dedicated computer science student eager to develop innovative solutions to real-world challenges. With a good foundation in programming and a keen interest in technology, I strive to explore the dynamic tech landscape and contribute to creating impactful projects.</p>
+            </section>
+
+            <section class="section education">
+                <h2>Education</h2>
+                <div class="education-item">
+                    <h3>KSSS PU College, Budarshinghi</h3>
+                    <p>Pre-University Education (2020–2022)</p>
+                    <p>Percentage: 80%</p>
+                </div>
+                <div class="education-item">
+                    <h3>KLE Technological University, Hubballi</h3>
+                    <p>Bachelor of Computer Application (2022–2025)</p>
+                    <p>Current CGPA: 8.95</p>
+                </div>
+            </section>
+
+            <section class="section skills">
+                <h2>Skills & Expertise</h2>
+                <div class="skill">
+                    <h3>Languages</h3>
+                    <p>C++, C, Java, Python, JavaScript, HTML, Bootstrap CSS, Dart</p>
+                </div>
+                <div class="skill">
+                    <h3>Tools</h3>
+                    <p>Word, PowerPoint, GitHub, Visual Studio Code, Google Colab, IntelliJ IDEA, Excel</p>
+                </div>
+                <div class="skill">
+                    <h3>Technologies/Frameworks</h3>
+                    <p>MySQL, MongoDB, Docker, GitHub, Jenkins, Maven</p>
+                </div>
+                <div class="skill">
+                    <h3>Soft Skills</h3>
+                    <p>Teamwork, Time Management, Punctual, Attentive</p>
+                </div>
+            </section>
+
+            <section class="section certifications">
+                <h2>Certifications</h2>
+                <ul>
+                    <li><strong>INFOSYS – FUNDAMENTALS OF INFORMATION SECURITY</strong></li>
+                    <li><strong>SOC EXPERTS – ABC’S OF MALWARE</strong></li>
+                    <li><strong>INTRODUCTION TO BIG DATA TOOLS</strong></li>
+                    <li><strong>INTRODUCTION TO COMPONENTS OF HADOOP</strong></li>
+                </ul>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p class="contact-text">To contact me, reach out via the following:</p>
+            <div class="contact-icons">
+                <a href="mailto:ramyabhat264@gmail.com" target="_blank">
+                    <img src="https://img.icons8.com/ios-filled/50/ffffff/email.png" alt="Email">
+                </a>
+                <a href="https://www.linkedin.com/in/ramya-bhat-3b116725b/" target="_blank">
+                    <img src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png" alt="LinkedIn">
+                </a>
+                <a href="https://github.com/Ramyabt-264" target="_blank">
+                    <img src="https://img.icons8.com/ios-filled/50/ffffff/github.png" alt="GitHub">
+                </a>
+            </div>
+            <p>&copy; 2024 <a href="mailto:ramyabhat264@gmail.com">Ramya Bhat</a>. All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
